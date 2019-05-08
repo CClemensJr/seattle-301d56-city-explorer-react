@@ -16,16 +16,16 @@ integrate 3rd party APIs later on.```
 
 ### Number and name of feature: Feature 1: Scaffold City Explorer Components
 
-> Estimate of time needed to complete: 2 houra
+> estimate of time needed to complete: 2 hours
 
-> Start time: 9:00am
+> start time: 11:00am
 
-> Finish time: 
+> finish time: 
 
-> Actual time needed to complete: 
+> actual time needed to complete: 
+
 
 ## Authors
-
 * **Charles Clemens** - *Initial work* - [CClemensJr](https://github.com/CClemensJr)
 
 ## License

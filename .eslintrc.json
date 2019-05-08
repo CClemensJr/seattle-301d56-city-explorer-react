@@ -1,6 +1,4 @@
-@Levi try this one!
-
-```{
+{
   "extends": ["airbnb-base","plugin:jest/recommended","plugin:react/recommended"],
   "env": {
     "browser": true
@@ -20,4 +18,4 @@
     "no-underscore-dangle": "off",
     "strict": "off"
   }
-}```
+}

@@ -9,7 +9,7 @@ class Map extends React.Component {
     return (
       <React.Fragment>
         <img src={ this.props.src } alt={ this.props.alt } />
-        <h2>{ this.props.query-placeholder }</h2>
+        <h2>{ this.props.query }</h2>
       </React.Fragment>
     );
   }

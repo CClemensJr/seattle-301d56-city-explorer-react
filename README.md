@@ -20,9 +20,9 @@ integrate 3rd party APIs later on.```
 
 > start time: 11:00am
 
-> finish time: 
+> finish time: 12:30pm
 
-> actual time needed to complete: 
+> actual time needed to complete: 90minutes
 
 
 ## Authors

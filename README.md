@@ -14,6 +14,16 @@ integrate 3rd party APIs later on.```
 
 ## Change Log
 
+### Number and name of feature: Feature 2: Implement City Explorer Components
+
+> estimate of time needed to complete: 2 hours
+
+> start time: 10:00am
+
+> finish time:
+
+> actual time needed to complete:
+
 ### Number and name of feature: Feature 1: Scaffold City Explorer Components
 
 > estimate of time needed to complete: 2 hours

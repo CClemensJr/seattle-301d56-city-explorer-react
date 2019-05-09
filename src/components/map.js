@@ -9,8 +9,7 @@ class Map extends React.Component {
     super(props);
 
     this.state = { 
-      city: '',
-      alt: this.city,
+      apiKey: process.env.GOOGLE_MAPS_API_KEY,
       url: "https://city-explorer-backend.herokuapp.com/location"
     };
   }

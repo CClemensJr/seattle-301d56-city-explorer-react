@@ -16,7 +16,7 @@ class SearchForm extends React.Component {
     let apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${ this.query }&key=${ process.env.GOOGLE_MAPS_API_KEY}`;
     let data = await superagent.get(apiUrl);
     
-    this.props.handler(data);
+    this.props.handler(apiUrl);
   };
 
   render() {

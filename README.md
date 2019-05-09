@@ -3,11 +3,14 @@
 
 ## Overview
 ```Re-implement the City Explorer front end through the use of ReactJS. 
-Your goal for today is to get a static/placeholder representation of 
-your application configured and setup so that we can progressively modularize 
-and build against that throughout the week. Essentially, you'll be setting up 
-and building the scaffold today so that we can wire things together and 
-integrate 3rd party APIs later on.```
+Today, you will be re-packaging the components you created previously 
+into their own files and importing/exporting those files accordingly. 
+You'll need to refactor your <Search> component to now be called <SearchForm>, 
+which should be configured to pass location information to the <Map> component 
+and have it render as such. Along with refactoring your <Search> component, 
+it's time to add a parent component for our individual search results. 
+That should be called <SearchResults> and should render out each result indivdually.```
+
 
 ## Getting Started
 > clone the repo, install dependencies, and npm start!

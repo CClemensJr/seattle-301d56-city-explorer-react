@@ -11,20 +11,20 @@ class Map extends React.Component {
     this.state = { 
       city: '',
       alt: this.city,
-      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${ this.city }&key=${ process.env.GOOGLE_MAPS_API_KEY }`,
+      url: "https://city-explorer-backend.herokuapp.com/location"
     };
   }
 
   handleForm = submission => {
-    this.setState( { city: submission.toLowerCase() });
+    this.setState( { city: submission });
   }
 
   render() {
     return (
       <React.Fragment>
         <SearchForm handler={ this.handleForm } />
-        {/* <img src={ this.state.url } alt={ this.props.alt } />
-        <h2>{ this.props.query }</h2> */}
+        <img id="map" class="hide" src="" alt="Map of search query" />
+        <h2 class="query-placeholder"></h2>
       </React.Fragment>
     );
   }

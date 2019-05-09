@@ -5,18 +5,15 @@ import dotenv from 'dotenv';
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state ={  query: 'Seattle' };
+    this.state ={ searchTerm: '' };
   }
 
+  updateSearchTerm = async e => this.setState({ searchTerm: e.target.value });
 
   handleSubmit = async e => {
     e.preventDefault();
 
-    let apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${ this.query }&key=${ process.env.GOOGLE_MAPS_API_KEY}`;
-    let data = await superagent.get(apiUrl);
-    
-    this.props.handler(apiUrl);
+    this.props.handler(this.state.searchTerm);
   };
 
   render() {
@@ -24,12 +21,12 @@ class SearchForm extends React.Component {
       <React.Fragment>
         <form onSubmit={ this.handleSubmit }>
           <label>
-            { this.props.label }
+            Search for a location
 
-            <input type={ this.props.type } onChange={ this.handleChange }/> 
+            <input type="text" value={ this.state.searchTerm } onChange={ this.updateSearchTerm } /> 
           </label>
 
-          <button>{ this.props.prompt }</button>
+          <button>Explore!</button>
         </form>
       </React.Fragment>
     );

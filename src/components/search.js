@@ -11,7 +11,7 @@ class SearchForm extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    this.props.handler(this.state.searchTerm);
+    this.props.handler(this.state.searchTerm.toLowerCase());
   };
 
   render() {

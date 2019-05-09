@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header title="City Explorer" prompt="Enter a location below to learn about the weather, events, restaurants, movies filmed there, and more!" />
-        <Map src="https://placeimg.com/640/480/any" alt="A placeholder image" query="Some random city over here!" />
+        <Map />
 
         <div class="column-container">
           <Result container="weather-container" heading="Results from the Dark Sky API" results="weather-results" />

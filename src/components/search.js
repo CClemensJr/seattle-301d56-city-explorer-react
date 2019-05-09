@@ -1,6 +1,4 @@
 import React from 'react';
-import superagent from 'superagent';
-import dotenv from 'dotenv';
 
 class SearchForm extends React.Component {
   constructor(props) {

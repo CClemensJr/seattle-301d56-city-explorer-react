@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = { 
       location: {},
-      mapUrl: `https://maps.googleapis.com/maps/api/staticmap?center=${location.latitude}%2c%20${location.longitude}&zoom=13&size=600x300&maptype=roadmap&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+      mapUrl: ""
     };
   }
 
@@ -21,6 +21,7 @@ class App extends React.Component {
     let city = await superagent.get(url+"location").query(`data=${ submission }`);
 
     await this.setState({ location: city.body });
+    await this.setState({ mapUrl: `https://maps.googleapis.com/maps/api/staticmap?center=${city.body.latitude}%2c%20${city.body.longitude}&zoom=13&size=600x300&maptype=roadmap&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}` });
 
     console.log(this.state.location);
   }

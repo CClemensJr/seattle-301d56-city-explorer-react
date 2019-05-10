@@ -26,15 +26,18 @@ class App extends React.Component {
     console.log(this.state.serverUrl);
     let locationData = await superagent.get(this.state.serverUrl+"location").query(`data=${ submission }`);
     let weatherData = superagent.get(this.state.serverUrl + "weather").query(locationData.body);
+    let eventsData = superagent.get(this.state.serverUrl + "events").query(locationData.body);
+    let moviesData = superagent.get(this.state.serverUrl + "movies").query(locationData.body);
+    let yelpData = superagent.get(this.state.serverUrl + "yelp").query(locationData.body);
+    let trailsData = superagent.get(this.state.serverUrl + "trails").query(locationData.body);
  
     this.setState({ location: locationData.body });
     this.setState({ mapUrl: `https://maps.googleapis.com/maps/api/staticmap?center=${locationData.body.latitude}%2c%20${locationData.body.longitude}&zoom=13&size=600x300&maptype=roadmap&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}` });
     this.setState({ weather: weatherData });
-
-    console.log(this.state.location);
-
-    console.log(this.state.weather);
-
+    this.setState({ events: eventsData });
+    this.setState({ movies: moviesData });
+    this.setState({ yelp: yelpData });
+    this.setState({ trails: trailsData });
   }
 
   render() {

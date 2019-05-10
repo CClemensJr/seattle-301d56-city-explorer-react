@@ -7,6 +7,8 @@ import Result from './result.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { location: {} };
   }
 
   render() {

@@ -1,22 +1,36 @@
 import React from 'react';
+import superagent from 'superagent';
 import Header from './header.js';
 import Map from './map.js';
 import SearchForm from './search.js';
 import Result from './result.js';
 
+//`https://maps.googleapis.com/maps/api/staticmap?center=${location.body.latitude}%2c%20${location.body.longitude}&zoom=13&size=600x300&maptype=roadmap&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { location: {} };
+    this.state = { 
+      location: {},
+      mapUrl: `https://maps.googleapis.com/maps/api/staticmap?center=${location.latitude}%2c%20${location.longitude}&zoom=13&size=600x300&maptype=roadmap&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+    };
+  }
+
+  handleForm = async submission => {
+    let url = "https://city-explorer-backend.herokuapp.com/";
+    let city = await superagent.get(url+"location").query(`data=${ submission }`);
+
+    await this.setState({ location: city.body });
+
+    console.log(this.state.location);
   }
 
   render() {
     return (
       <React.Fragment>
         <Header title="City Explorer" prompt="Enter a location below to learn about the weather, events, restaurants, movies filmed there, and more!" />
-        <Map />
-
+        <SearchForm handler={ this.handleForm } />
+        <Map src={ this.state.mapUrl } title={ this.state.location.formatted_address } />
         <div class="column-container">
           <Result container="weather-container" heading="Results from the Dark Sky API" results="weather-results" />
           <Result container="yelp-container" heading="Results from the Yelp API" results="yelp-results" />

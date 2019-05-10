@@ -22,7 +22,7 @@ class Map extends React.Component {
     return (
       <React.Fragment>
         <img id="map" src={ this.props.src } alt="Map of search query" />
-        <h2>{ this.props.city_name }</h2>
+        <h2>{ this.props.title }</h2>
       </React.Fragment>
     );
   }
